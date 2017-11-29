@@ -59,3 +59,8 @@ left outer join job_history j
 on(e.employee_id=j.employee_id)
 group by e.employee_id
 order by switch;
+
+select last_name,salary
+from employees
+where salary>all(select salary
+from employees where department_id =80);
